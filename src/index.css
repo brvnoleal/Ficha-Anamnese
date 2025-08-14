@@ -145,11 +145,11 @@ All colors MUST be HSL.
   
   .medical-title {
     font-family: var(--font-title);
-    @apply text-3xl font-normal text-center text-primary mb-2;
+    @apply text-4xl md:text-5xl font-normal text-center text-primary mb-2;
   }
   
   .medical-subtitle {
-    @apply text-sm text-center font-bold text-black mb-8 leading-relaxed;
+    @apply text-xs text-center font-bold text-black mb-8 leading-tight;
   }
   
   .medical-card {
