@@ -8,35 +8,53 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Tema médico elegante com tons de azul e branco */
+    --background: 210 20% 98%;
+    --foreground: 210 40% 5%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 5%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Azul médico principal */
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Tons secundários suaves */
+    --secondary: 210 40% 95%;
+    --secondary-foreground: 210 40% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 20% 92%;
+    --muted-foreground: 210 20% 50%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 195 100% 96%;
+    --accent-foreground: 210 100% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --border: 210 20% 88%;
+    --input: 210 20% 95%;
+    --ring: 210 100% 45%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 12px;
+    
+    /* Gradientes médicos elegantes */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(195 100% 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent)));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 60% 55%));
+    
+    /* Sombras suaves */
+    --shadow-soft: 0 2px 8px hsl(210 20% 50% / 0.1);
+    --shadow-medium: 0 4px 16px hsl(210 20% 50% / 0.15);
+    
+    /* Animações suaves */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Fonte para título */
+    --font-title: 'Henny Penny', cursive;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +74,38 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Modo escuro mantém o tema médico */
+    --background: 210 40% 8%;
+    --foreground: 210 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 40% 10%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 40% 10%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 210 100% 55%;
+    --primary-foreground: 210 40% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 15%;
+    --secondary-foreground: 210 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 40% 12%;
+    --muted-foreground: 210 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 195 100% 15%;
+    --accent-foreground: 195 100% 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 210 40% 20%;
+    --input: 210 40% 12%;
+    --ring: 210 100% 55%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(195 100% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent)));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 45%), hsl(142 60% 65%));
   }
 }
 
@@ -100,6 +115,64 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  /* iOS safe area support */
+  .safe-area {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* iOS input zoom prevention */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+@layer components {
+  /* Componentes customizados para o formulário médico */
+  .medical-container {
+    @apply w-full max-w-sm mx-auto px-4 py-6 min-h-screen flex flex-col;
+  }
+  
+  .medical-title {
+    font-family: var(--font-title);
+    @apply text-3xl font-normal text-center text-primary mb-2;
+  }
+  
+  .medical-subtitle {
+    @apply text-sm text-center text-muted-foreground mb-8 leading-relaxed;
+  }
+  
+  .medical-card {
+    @apply bg-card rounded-2xl p-6 shadow-[var(--shadow-medium)] border border-border/50;
+  }
+  
+  .medical-input {
+    @apply h-12 px-4 text-base bg-input border-border/60 rounded-xl transition-[var(--transition-smooth)] focus:border-primary focus:ring-2 focus:ring-primary/20;
+  }
+  
+  .medical-button-primary {
+    @apply h-12 px-6 bg-[var(--gradient-primary)] text-primary-foreground rounded-xl font-medium transition-[var(--transition-smooth)] hover:shadow-[var(--shadow-medium)] active:scale-[0.98];
+  }
+  
+  .medical-button-secondary {
+    @apply h-12 px-6 bg-secondary text-secondary-foreground rounded-xl font-medium transition-[var(--transition-smooth)] hover:bg-secondary/80 active:scale-[0.98];
+  }
+  
+  .medical-progress {
+    @apply w-full h-2 bg-secondary rounded-full overflow-hidden;
+  }
+  
+  .medical-progress-bar {
+    @apply h-full bg-[var(--gradient-primary)] rounded-full transition-all duration-500 ease-out;
+  }
+  
+  .medical-footer {
+    @apply fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-t border-border p-4 pb-[calc(1rem+env(safe-area-inset-bottom))];
   }
 }
