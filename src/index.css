@@ -149,7 +149,7 @@ All colors MUST be HSL.
   }
   
   .medical-subtitle {
-    @apply text-xs text-center font-bold text-black mb-8 leading-tight;
+    @apply text-[10px] text-center font-bold text-black mb-8 leading-tight;
   }
   
   .medical-card {
