@@ -62,7 +62,7 @@ export const validateCEP = (cep: string): boolean => {
 
 export const validateWhatsApp = (whatsapp: string): boolean => {
   const digits = extractDigits(whatsapp);
-  return digits.length === 11 && digits.startsWith('11');
+  return digits.length === 11;
 };
 
 export const formatDate = (date: Date): string => {
