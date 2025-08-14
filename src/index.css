@@ -176,7 +176,4 @@ All colors MUST be HSL.
     @apply h-full bg-[var(--gradient-primary)] rounded-full transition-all duration-500 ease-out;
   }
   
-  .medical-footer {
-    @apply fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-t border-border p-4 pb-[calc(1rem+env(safe-area-inset-bottom))];
-  }
 }

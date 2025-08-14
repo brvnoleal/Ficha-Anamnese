@@ -1107,42 +1107,42 @@ export const MedicalForm: React.FC = () => {
         </Alert>
       )}
 
-      {/* Footer Navigation */}
-      <div className="medical-footer">
-        <div className="flex justify-between gap-4">
+      {/* Navigation Buttons */}
+      <div className="mt-8 pt-6 border-t border-border/30">
+        <div className="flex gap-4 w-full">
           <Button
             onClick={prevStep}
             disabled={currentStep === 1}
             variant="outline"
-            className="medical-button-secondary flex-1 max-w-[120px]"
+            className="medical-button-secondary flex-1 min-w-0"
           >
-            <ChevronLeft size={20} className="mr-2" />
-            Voltar
+            <ChevronLeft size={20} className="mr-2 flex-shrink-0" />
+            <span className="truncate">Voltar</span>
           </Button>
           
           {currentStep < TOTAL_STEPS ? (
             <Button
               onClick={nextStep}
-              className="medical-button-primary flex-1"
+              className="medical-button-primary flex-1 min-w-0"
             >
-              Próximo
-              <ChevronRight size={20} className="ml-2" />
+              <span className="truncate">Próximo</span>
+              <ChevronRight size={20} className="ml-2 flex-shrink-0" />
             </Button>
           ) : (
             <Button
               onClick={submitForm}
               disabled={isSubmitting}
-              className="medical-button-primary flex-1"
+              className="medical-button-primary flex-1 min-w-0"
             >
               {isSubmitting ? (
                 <>
-                  <Loader2 size={20} className="mr-2 animate-spin" />
-                  Enviando...
+                  <Loader2 size={20} className="mr-2 flex-shrink-0 animate-spin" />
+                  <span className="truncate">Enviando...</span>
                 </>
               ) : (
                 <>
-                  <Send size={20} className="mr-2" />
-                  Finalizar
+                  <Send size={20} className="mr-2 flex-shrink-0" />
+                  <span className="truncate">Finalizar</span>
                 </>
               )}
             </Button>
