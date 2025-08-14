@@ -295,8 +295,7 @@ export const MedicalForm: React.FC = () => {
         <div className="text-center space-y-2">
           <h1 className="medical-title">Damski Odonto</h1>
           <p className="medical-subtitle">
-            CIRURGIÃ - DENTISTA – CLÍNICO GERAL E ODONTO<br />
-            CROSP N.º 134818
+            CIRURGIÃ - DENTISTA – CLÍNICO GERAL E ODONTO CROSP N.º 134818
           </p>
         </div>
         
