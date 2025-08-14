@@ -18,9 +18,12 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 210 40% 5%;
 
-    /* Azul médico principal */
-    --primary: 210 100% 45%;
+    /* Rosa pastel médico */
+    --primary: 330 60% 75%;
     --primary-foreground: 0 0% 100%;
+    
+    /* Cor dos ícones rosa pastel */
+    --icon-pink: 330 60% 75%;
     
     /* Tons secundários suaves */
     --secondary: 210 40% 95%;
@@ -84,8 +87,9 @@ All colors MUST be HSL.
     --popover: 210 40% 10%;
     --popover-foreground: 210 20% 95%;
 
-    --primary: 210 100% 55%;
+    --primary: 330 60% 75%;
     --primary-foreground: 210 40% 8%;
+    --icon-pink: 330 60% 75%;
 
     --secondary: 210 40% 15%;
     --secondary-foreground: 210 20% 95%;
@@ -145,7 +149,7 @@ All colors MUST be HSL.
   }
   
   .medical-subtitle {
-    @apply text-sm text-center text-muted-foreground mb-8 leading-relaxed;
+    @apply text-sm text-center font-bold text-black mb-8 leading-relaxed;
   }
   
   .medical-card {

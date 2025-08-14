@@ -541,7 +541,7 @@ export const MedicalForm: React.FC = () => {
               {/* Página 2 - Anamnese Parte 1 */}
               {currentStep === 2 && (
                 <>
-                  <h2 className="text-xl font-semibold text-foreground mb-6">Ficha de Anamnese - Parte 1</h2>
+                  <h2 className="text-xl font-semibold text-foreground mb-6">FICHA DE ANAMNESE</h2>
                   
                   <div className="space-y-6">
                     <div>
@@ -700,7 +700,7 @@ export const MedicalForm: React.FC = () => {
               {/* Página 3 - Anamnese Parte 2 */}
               {currentStep === 3 && (
                 <>
-                  <h2 className="text-xl font-semibold text-foreground mb-6">Ficha de Anamnese - Parte 2</h2>
+                  <h2 className="text-xl font-semibold text-foreground mb-6">FICHA DE ANAMNESE</h2>
                   
                   <div className="space-y-6">
                     <FormRadio
@@ -819,7 +819,7 @@ export const MedicalForm: React.FC = () => {
               {/* Página 4 - Anamnese Parte 3 */}
               {currentStep === 4 && (
                 <>
-                  <h2 className="text-xl font-semibold text-foreground mb-6">Ficha de Anamnese - Parte 3</h2>
+                  <h2 className="text-xl font-semibold text-foreground mb-6">FICHA DE ANAMNESE</h2>
                   
                   <div className="space-y-6">
                     <FormRadio
@@ -923,7 +923,7 @@ export const MedicalForm: React.FC = () => {
               {/* Página 5 - Anamnese Parte 4 */}
               {currentStep === 5 && (
                 <>
-                  <h2 className="text-xl font-semibold text-foreground mb-6">Ficha de Anamnese - Parte 4</h2>
+                  <h2 className="text-xl font-semibold text-foreground mb-6">FICHA DE ANAMNESE</h2>
                   
                   <div className="space-y-6">
                     <FormRadio
@@ -1114,7 +1114,7 @@ export const MedicalForm: React.FC = () => {
             onClick={prevStep}
             disabled={currentStep === 1}
             variant="outline"
-            className="medical-button-secondary flex-1"
+            className="medical-button-secondary flex-1 max-w-[120px]"
           >
             <ChevronLeft size={20} className="mr-2" />
             Voltar

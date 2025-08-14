@@ -46,7 +46,7 @@ export const FormInput: React.FC<FormInputProps> = ({
         htmlFor={id} 
         className="text-sm font-medium text-foreground flex items-center gap-2"
       >
-        {Icon && <Icon size={16} className="text-primary" />}
+        {Icon && <Icon size={16} className="text-icon-pink" />}
         {label}
         {required && <span className="text-destructive">*</span>}
       </Label>
