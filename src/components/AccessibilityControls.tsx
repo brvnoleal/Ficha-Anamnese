@@ -40,7 +40,7 @@ export const AccessibilityControls: React.FC = () => {
   };
 
   return (
-    <div className="fixed top-12 right-4 z-50 flex flex-col gap-1.5">
+    <div className="fixed top-12 right-4 z-50 flex gap-1.5">
       <motion.button
         onClick={toggleContrast}
         whileHover={{ scale: 1.1 }}
