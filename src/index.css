@@ -2,6 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* High Contrast Mode */
+.high-contrast {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+  --primary: 0 0% 0%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 90%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 0 0% 85%;
+  --muted-foreground: 0 0% 10%;
+  --accent: 0 0% 85%;
+  --accent-foreground: 0 0% 0%;
+  --border: 0 0% 0%;
+  --input: 0 0% 0%;
+  --ring: 0 0% 0%;
+}
+
+.high-contrast .medical-card {
+  border: 2px solid hsl(0 0% 0%);
+}
+
+.high-contrast .medical-input {
+  border: 2px solid hsl(0 0% 0%);
+}
+
+.high-contrast .medical-button-primary {
+  background: hsl(0 0% 0%);
+  color: hsl(0 0% 100%);
+}
+
+.high-contrast .medical-button-secondary {
+  background: hsl(0 0% 100%);
+  color: hsl(0 0% 0%);
+  border: 2px solid hsl(0 0% 0%);
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
