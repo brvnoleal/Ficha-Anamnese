@@ -1,0 +1,128 @@
+{
+  "header": {
+    "title": "Damski Odonto",
+    "subtitle": "DENTAL SURGEON – GENERAL CLINICIAN AND ODONTO CROSP N.º 134818"
+  },
+  "progress": {
+    "step": "Step {{current}} of {{total}}"
+  },
+  "navigation": {
+    "previous": "Previous",
+    "next": "Next",
+    "submit": "Submit",
+    "close": "Close"
+  },
+  "success": {
+    "title": "Form Submitted!",
+    "message": "Your anamnesis form has been successfully sent to Damski Odonto clinic."
+  },
+  "validation": {
+    "required": "Required field",
+    "invalidCPF": "Invalid CPF",
+    "invalidCEP": "Invalid ZIP code",
+    "invalidWhatsApp": "WhatsApp must have 11 digits",
+    "requiredFields": "Required fields",
+    "fillRequired": "Please fill in all required fields before continuing.",
+    "fillRequiredFinish": "Please fill in all required fields before finishing."
+  },
+  "toast": {
+    "success": "Success!",
+    "successMessage": "Form submitted successfully!",
+    "error": "Error sending",
+    "errorMessage": "An error occurred while sending the form. Please try again."
+  },
+  "page1": {
+    "title": "Personal Information",
+    "fullName": "Full Name",
+    "rg": "ID Number (RG)",
+    "issuingBody": "Issuing Authority",
+    "cpf": "Tax ID (CPF)",
+    "birthDate": "Date of Birth",
+    "sex": "Sex",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "maritalStatus": "Marital Status",
+    "single": "Single",
+    "married": "Married",
+    "divorced": "Divorced",
+    "widowed": "Widowed",
+    "civilUnion": "Civil Union",
+    "nationality": "Nationality",
+    "consultationDate": "Consultation Date",
+    "whatsapp": "WhatsApp",
+    "referredBy": "Referred by",
+    "address": "Address",
+    "streetName": "Street Name",
+    "number": "Number",
+    "complement": "Complement",
+    "neighborhood": "Neighborhood",
+    "city": "City",
+    "state": "State",
+    "zipCode": "ZIP Code"
+  },
+  "page2": {
+    "title": "ANAMNESIS FORM",
+    "medicalTreatment": "Are you currently under medical treatment?",
+    "ifYesWhich": "If yes, which one?",
+    "allergicMedication": "Allergic to any medication?",
+    "anyAllergy": "Do you have any type of allergy?",
+    "pregnant": "Are you pregnant?",
+    "ifYesHowManyMonths": "If yes, how many months?",
+    "diabetes": "Do you have diabetes?",
+    "ifYesWhichMedication": "If yes, which medication do you take?",
+    "hepatitis": "Have you had Hepatitis?",
+    "ifYesHowLongAgo": "If yes, how long ago?"
+  },
+  "page3": {
+    "excessiveThirst": "Do you feel excessive thirst?",
+    "heartProblems": "Do you have heart problems?",
+    "hivSyphilisChagas": "HIV, Syphilis or Chagas?",
+    "drugs": "Do you use any type of drugs?",
+    "smoker": "Are you a smoker?",
+    "ifYesWhich": "If yes, which one?",
+    "ifYesHowLong": "If yes, for how long?"
+  },
+  "page4": {
+    "bloodPressure": "How is your blood pressure?",
+    "low": "Low",
+    "normal": "Normal",
+    "high": "High",
+    "controlsPressure": "Do you control your blood pressure?",
+    "ifYesWhichMedication": "If yes, which medication do you use?",
+    "familyHistory": "Do you have a family history of diseases?",
+    "ifYesWhich": "If yes, which ones?",
+    "bleeding": "How is your bleeding?",
+    "normalBleeding": "Normal",
+    "excessiveBleeding": "Excessive",
+    "surgery": "Have you had any surgery?",
+    "ifYesWhichYear": "If yes, which one and what year?"
+  },
+  "page5": {
+    "title": "Clinical Examination",
+    "bleedingTeeth": "Do you bleed a lot when brushing your teeth?",
+    "toothPain": "Do you feel pain in your teeth?",
+    "gumBleeding": "Does your gum bleed?",
+    "hadAnesthesia": "Have you ever had anesthesia?",
+    "anesthesiaMalaise": "If yes, did you feel unwell?",
+    "satisfiedTeeth": "Are you satisfied with your teeth?",
+    "mainComplaint": "What is your main complaint?"
+  },
+  "page6": {
+    "title": "Terms and Consents",
+    "responsibilityTerm": "I authorize and take responsibility for the dental treatment I receive, having the freedom to ask any questions about the treatment, including the materials used. The procedures to be performed and any risks have been presented to me.",
+    "consentTerm": "I declare under penalty of law that the information in this form is true.",
+    "imageTerm": "I authorize Dr. Tamara Damski to use my photos, images, testimonials and clinical cases in marketing and promotional materials for the clinic.",
+    "lgpdTerm": "I declare that the information in this document is true. I authorize Dr. Tamara Damski to use this data, under the terms of LGPD, exclusively for dental treatment purposes.",
+    "responsibleName": "Responsible party's name",
+    "minorName": "Minor's name (if applicable)",
+    "todayDate": "Date",
+    "termRequired": "This term is required",
+    "responsibleRequired": "Responsible party's name is required",
+    "dateRequired": "Date is required"
+  },
+  "options": {
+    "yes": "Yes",
+    "no": "No"
+  }
+}

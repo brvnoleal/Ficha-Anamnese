@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -34,38 +35,40 @@ const STATES = [
   { value: 'SP', label: 'SP' }, { value: 'SE', label: 'SE' }, { value: 'TO', label: 'TO' }
 ];
 
-const SEX_OPTIONS = [
-  { value: 'Masculino', label: 'Masculino' },
-  { value: 'Feminino', label: 'Feminino' },
-  { value: 'Outro', label: 'Outro' }
-];
-
-const CIVIL_STATUS_OPTIONS = [
-  { value: 'Solteiro(a)', label: 'Solteiro(a)' },
-  { value: 'Casado(a)', label: 'Casado(a)' },
-  { value: 'Divorciado(a)', label: 'Divorciado(a)' },
-  { value: 'Viúvo(a)', label: 'Viúvo(a)' },
-  { value: 'União Estável', label: 'União Estável' }
-];
-
-const YES_NO_OPTIONS = [
-  { value: 'sim', label: 'Sim' },
-  { value: 'nao', label: 'Não' }
-];
-
-const PRESSURE_OPTIONS = [
-  { value: 'baixa', label: 'Baixa' },
-  { value: 'normal', label: 'Normal' },
-  { value: 'alta', label: 'Alta' }
-];
-
-const BLEEDING_OPTIONS = [
-  { value: 'normal', label: 'Normal' },
-  { value: 'excessivo', label: 'Excessivo' }
-];
-
 export const MedicalForm: React.FC = () => {
+  const { t } = useTranslation();
   const { toast } = useToast();
+
+  // Opções traduzidas
+  const SEX_OPTIONS = [
+    { value: 'Masculino', label: t('page1.male') },
+    { value: 'Feminino', label: t('page1.female') },
+    { value: 'Outro', label: t('page1.other') }
+  ];
+
+  const CIVIL_STATUS_OPTIONS = [
+    { value: 'Solteiro(a)', label: t('page1.single') },
+    { value: 'Casado(a)', label: t('page1.married') },
+    { value: 'Divorciado(a)', label: t('page1.divorced') },
+    { value: 'Viúvo(a)', label: t('page1.widowed') },
+    { value: 'União Estável', label: t('page1.civilUnion') }
+  ];
+
+  const YES_NO_OPTIONS = [
+    { value: 'sim', label: t('options.yes') },
+    { value: 'nao', label: t('options.no') }
+  ];
+
+  const PRESSURE_OPTIONS = [
+    { value: 'baixa', label: t('page4.low') },
+    { value: 'normal', label: t('page4.normal') },
+    { value: 'alta', label: t('page4.high') }
+  ];
+
+  const BLEEDING_OPTIONS = [
+    { value: 'normal', label: t('page4.normalBleeding') },
+    { value: 'excessivo', label: t('page4.excessiveBleeding') }
+  ];
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
@@ -139,34 +142,34 @@ export const MedicalForm: React.FC = () => {
     
     switch (step) {
       case 1:
-        if (!formData.nome_completo.trim()) newErrors.nome_completo = 'Nome é obrigatório';
-        if (!formData.rg.trim()) newErrors.rg = 'RG é obrigatório';
-        if (!formData.orgao_expedidor.trim()) newErrors.orgao_expedidor = 'Órgão expedidor é obrigatório';
-        if (!formData.cpf.trim()) newErrors.cpf = 'CPF é obrigatório';
-        else if (!validateCPF(formData.cpf)) newErrors.cpf = 'CPF inválido';
-        if (!formData.data_nascimento) newErrors.data_nascimento = 'Data de nascimento é obrigatória';
-        if (!formData.sexo) newErrors.sexo = 'Sexo é obrigatório';
-        if (!formData.estado_civil) newErrors.estado_civil = 'Estado civil é obrigatório';
-        if (!formData.nacionalidade.trim()) newErrors.nacionalidade = 'Nacionalidade é obrigatória';
-        if (!formData.data_consulta) newErrors.data_consulta = 'Data da consulta é obrigatória';
-        if (!formData.whatsapp.trim()) newErrors.whatsapp = 'WhatsApp é obrigatório';
-        else if (!validateWhatsApp(formData.whatsapp)) newErrors.whatsapp = 'WhatsApp deve ter 11 dígitos e começar com 11';
-        if (!formData.nome_rua.trim()) newErrors.nome_rua = 'Nome da rua é obrigatório';
-        if (!formData.numero.trim()) newErrors.numero = 'Número é obrigatório';
-        if (!formData.bairro.trim()) newErrors.bairro = 'Bairro é obrigatório';
-        if (!formData.cidade.trim()) newErrors.cidade = 'Cidade é obrigatória';
-        if (!formData.estado) newErrors.estado = 'Estado é obrigatório';
-        if (!formData.cep.trim()) newErrors.cep = 'CEP é obrigatório';
-        else if (!validateCEP(formData.cep)) newErrors.cep = 'CEP inválido';
+        if (!formData.nome_completo.trim()) newErrors.nome_completo = t('validation.required');
+        if (!formData.rg.trim()) newErrors.rg = t('validation.required');
+        if (!formData.orgao_expedidor.trim()) newErrors.orgao_expedidor = t('validation.required');
+        if (!formData.cpf.trim()) newErrors.cpf = t('validation.required');
+        else if (!validateCPF(formData.cpf)) newErrors.cpf = t('validation.invalidCPF');
+        if (!formData.data_nascimento) newErrors.data_nascimento = t('validation.required');
+        if (!formData.sexo) newErrors.sexo = t('validation.required');
+        if (!formData.estado_civil) newErrors.estado_civil = t('validation.required');
+        if (!formData.nacionalidade.trim()) newErrors.nacionalidade = t('validation.required');
+        if (!formData.data_consulta) newErrors.data_consulta = t('validation.required');
+        if (!formData.whatsapp.trim()) newErrors.whatsapp = t('validation.required');
+        else if (!validateWhatsApp(formData.whatsapp)) newErrors.whatsapp = t('validation.invalidWhatsApp');
+        if (!formData.nome_rua.trim()) newErrors.nome_rua = t('validation.required');
+        if (!formData.numero.trim()) newErrors.numero = t('validation.required');
+        if (!formData.bairro.trim()) newErrors.bairro = t('validation.required');
+        if (!formData.cidade.trim()) newErrors.cidade = t('validation.required');
+        if (!formData.estado) newErrors.estado = t('validation.required');
+        if (!formData.cep.trim()) newErrors.cep = t('validation.required');
+        else if (!validateCEP(formData.cep)) newErrors.cep = t('validation.invalidCEP');
         break;
         
       case 6:
-        if (!formData.termo_responsabilidade) newErrors.termo_responsabilidade = 'Este termo é obrigatório';
-        if (!formData.termo_consentimento) newErrors.termo_consentimento = 'Este termo é obrigatório';
-        if (!formData.termo_imagem) newErrors.termo_imagem = 'Este termo é obrigatório';
-        if (!formData.termo_lgpd) newErrors.termo_lgpd = 'Este termo é obrigatório';
-        if (!formData.nome_responsavel.trim()) newErrors.nome_responsavel = 'Nome do responsável é obrigatório';
-        if (!formData.data_hoje) newErrors.data_hoje = 'Data é obrigatória';
+        if (!formData.termo_responsabilidade) newErrors.termo_responsabilidade = t('page6.termRequired');
+        if (!formData.termo_consentimento) newErrors.termo_consentimento = t('page6.termRequired');
+        if (!formData.termo_imagem) newErrors.termo_imagem = t('page6.termRequired');
+        if (!formData.termo_lgpd) newErrors.termo_lgpd = t('page6.termRequired');
+        if (!formData.nome_responsavel.trim()) newErrors.nome_responsavel = t('page6.responsibleRequired');
+        if (!formData.data_hoje) newErrors.data_hoje = t('page6.dateRequired');
         break;
     }
     
@@ -179,8 +182,8 @@ export const MedicalForm: React.FC = () => {
       setCurrentStep(prev => Math.min(prev + 1, TOTAL_STEPS));
     } else {
       toast({
-        title: "Campos obrigatórios",
-        description: "Por favor, preencha todos os campos obrigatórios antes de continuar.",
+        title: t('validation.requiredFields'),
+        description: t('validation.fillRequired'),
         variant: "destructive"
       });
     }
@@ -193,8 +196,8 @@ export const MedicalForm: React.FC = () => {
   const submitForm = async () => {
     if (!validateStep(currentStep)) {
       toast({
-        title: "Campos obrigatórios",
-        description: "Por favor, preencha todos os campos obrigatórios antes de finalizar.",
+        title: t('validation.requiredFields'),
+        description: t('validation.fillRequiredFinish'),
         variant: "destructive"
       });
       return;
@@ -227,15 +230,15 @@ export const MedicalForm: React.FC = () => {
       localStorage.removeItem('damski-form-data'); // Limpar dados salvos
       
       toast({
-        title: "Sucesso!",
-        description: "Ficha enviada com sucesso!"
+        title: t('toast.success'),
+        description: t('toast.successMessage')
       });
 
     } catch (error) {
       console.error('Erro ao enviar:', error);
       toast({
-        title: "Erro ao enviar",
-        description: "Ocorreu um erro ao enviar a ficha. Tente novamente.",
+        title: t('toast.error'),
+        description: t('toast.errorMessage'),
         variant: "destructive"
       });
     } finally {
@@ -270,9 +273,9 @@ export const MedicalForm: React.FC = () => {
             </div>
             
             <div className="space-y-2">
-              <h1 className="medical-title text-2xl">Ficha Enviada!</h1>
+              <h1 className="medical-title text-2xl">{t('success.title')}</h1>
               <p className="text-muted-foreground">
-                Sua ficha de anamnese foi enviada com sucesso para a clínica Damski Odonto.
+                {t('success.message')}
               </p>
             </div>
             
@@ -280,7 +283,7 @@ export const MedicalForm: React.FC = () => {
               onClick={() => window.location.reload()}
               className="medical-button-primary"
             >
-              Fechar
+              {t('navigation.close')}
             </Button>
           </motion.div>
         </div>
@@ -293,9 +296,9 @@ export const MedicalForm: React.FC = () => {
       {/* Header */}
       <div className="space-y-6 mb-8">
         <div className="text-center space-y-2">
-          <h1 className="medical-title">Damski Odonto</h1>
+          <h1 className="medical-title">{t('header.title')}</h1>
           <p className="medical-subtitle">
-            CIRURGIÃ - DENTISTA – CLÍNICO GERAL E ODONTO CROSP N.º 134818
+            {t('header.subtitle')}
           </p>
         </div>
         
@@ -318,13 +321,13 @@ export const MedicalForm: React.FC = () => {
               {/* Página 1 - Informações Pessoais */}
               {currentStep === 1 && (
                 <>
-                  <h2 className="text-xl font-semibold text-foreground mb-6">Informações Pessoais</h2>
+                  <h2 className="text-xl font-semibold text-foreground mb-6">{t('page1.title')}</h2>
                   
                   <div className="space-y-4">
                     <FormInput
                       id="nome_completo"
                       name="nome_completo"
-                      label="Nome Completo"
+                      label={t('page1.fullName')}
                       value={formData.nome_completo}
                       onChange={(value) => updateField('nome_completo', value)}
                       icon={User}
@@ -335,7 +338,7 @@ export const MedicalForm: React.FC = () => {
                     <FormInput
                       id="rg"
                       name="rg"
-                      label="RG"
+                      label={t('page1.rg')}
                       value={formData.rg}
                       onChange={(value) => updateField('rg', value)}
                       icon={IdCard}
@@ -346,7 +349,7 @@ export const MedicalForm: React.FC = () => {
                     <FormInput
                       id="orgao_expedidor"
                       name="orgao_expedidor"
-                      label="Órgão Expedidor"
+                      label={t('page1.issuingBody')}
                       value={formData.orgao_expedidor}
                       onChange={(value) => updateField('orgao_expedidor', value)}
                       icon={BadgeCheck}
@@ -357,7 +360,7 @@ export const MedicalForm: React.FC = () => {
                     <FormInput
                       id="cpf"
                       name="cpf"
-                      label="CPF"
+                      label={t('page1.cpf')}
                       value={formData.cpf}
                       onChange={(value) => updateField('cpf', value)}
                       type="tel"
@@ -371,7 +374,7 @@ export const MedicalForm: React.FC = () => {
                     <FormInput
                       id="data_nascimento"
                       name="data_nascimento"
-                      label="Data de Nascimento"
+                      label={t('page1.birthDate')}
                       value={formData.data_nascimento}
                       onChange={(value) => updateField('data_nascimento', value)}
                       type="date"
@@ -383,7 +386,7 @@ export const MedicalForm: React.FC = () => {
                     <FormSelect
                       id="sexo"
                       name="sexo"
-                      label="Sexo"
+                      label={t('page1.sex')}
                       value={formData.sexo}
                       onChange={(value) => updateField('sexo', value)}
                       options={SEX_OPTIONS}
@@ -394,7 +397,7 @@ export const MedicalForm: React.FC = () => {
                     <FormSelect
                       id="estado_civil"
                       name="estado_civil"
-                      label="Estado Civil"
+                      label={t('page1.maritalStatus')}
                       value={formData.estado_civil}
                       onChange={(value) => updateField('estado_civil', value)}
                       options={CIVIL_STATUS_OPTIONS}
@@ -405,7 +408,7 @@ export const MedicalForm: React.FC = () => {
                     <FormInput
                       id="nacionalidade"
                       name="nacionalidade"
-                      label="Nacionalidade"
+                      label={t('page1.nationality')}
                       value={formData.nacionalidade}
                       onChange={(value) => updateField('nacionalidade', value)}
                       required
@@ -415,7 +418,7 @@ export const MedicalForm: React.FC = () => {
                     <FormInput
                       id="data_consulta"
                       name="data_consulta"
-                      label="Data da Consulta"
+                      label={t('page1.consultationDate')}
                       value={formData.data_consulta}
                       onChange={(value) => updateField('data_consulta', value)}
                       type="date"
@@ -427,7 +430,7 @@ export const MedicalForm: React.FC = () => {
                     <FormInput
                       id="whatsapp"
                       name="whatsapp"
-                      label="WhatsApp"
+                      label={t('page1.whatsapp')}
                       value={formData.whatsapp}
                       onChange={(value) => updateField('whatsapp', value)}
                       type="tel"
@@ -442,20 +445,20 @@ export const MedicalForm: React.FC = () => {
                     <FormInput
                       id="indicado_por"
                       name="indicado_por"
-                      label="Indicado por"
+                      label={t('page1.referredBy')}
                       value={formData.indicado_por}
                       onChange={(value) => updateField('indicado_por', value)}
                       error={errors.indicado_por}
                     />
                     
                     <div className="pt-4 border-t border-border">
-                      <h3 className="text-lg font-medium text-foreground mb-4">Endereço</h3>
+                      <h3 className="text-lg font-medium text-foreground mb-4">{t('page1.address')}</h3>
                       
                       <div className="space-y-4">
                         <FormInput
                           id="nome_rua"
                           name="nome_rua"
-                          label="Nome da Rua"
+                          label={t('page1.streetName')}
                           value={formData.nome_rua}
                           onChange={(value) => updateField('nome_rua', value)}
                           icon={MapPin}
@@ -467,7 +470,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="numero"
                             name="numero"
-                            label="Número"
+                            label={t('page1.number')}
                             value={formData.numero}
                             onChange={(value) => updateField('numero', value)}
                             icon={Home}
@@ -478,7 +481,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="complemento"
                             name="complemento"
-                            label="Complemento"
+                            label={t('page1.complement')}
                             value={formData.complemento}
                             onChange={(value) => updateField('complemento', value)}
                             error={errors.complemento}
@@ -488,7 +491,7 @@ export const MedicalForm: React.FC = () => {
                         <FormInput
                           id="bairro"
                           name="bairro"
-                          label="Bairro"
+                          label={t('page1.neighborhood')}
                           value={formData.bairro}
                           onChange={(value) => updateField('bairro', value)}
                           icon={Locate}
@@ -499,7 +502,7 @@ export const MedicalForm: React.FC = () => {
                         <FormInput
                           id="cidade"
                           name="cidade"
-                          label="Cidade"
+                          label={t('page1.city')}
                           value={formData.cidade}
                           onChange={(value) => updateField('cidade', value)}
                           icon={Building2}
@@ -510,7 +513,7 @@ export const MedicalForm: React.FC = () => {
                         <FormSelect
                           id="estado"
                           name="estado"
-                          label="Estado"
+                          label={t('page1.state')}
                           value={formData.estado}
                           onChange={(value) => updateField('estado', value)}
                           options={STATES}
@@ -521,7 +524,7 @@ export const MedicalForm: React.FC = () => {
                         <FormInput
                           id="cep"
                           name="cep"
-                          label="CEP"
+                          label={t('page1.zipCode')}
                           value={formData.cep}
                           onChange={(value) => updateField('cep', value)}
                           type="tel"
