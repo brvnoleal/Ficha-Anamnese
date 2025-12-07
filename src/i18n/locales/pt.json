@@ -1,0 +1,128 @@
+{
+  "header": {
+    "title": "Damski Odonto",
+    "subtitle": "CIRURGIÃ - DENTISTA – CLÍNICO GERAL E ODONTO CROSP N.º 134818"
+  },
+  "progress": {
+    "step": "Etapa {{current}} de {{total}}"
+  },
+  "navigation": {
+    "previous": "Anterior",
+    "next": "Próxima",
+    "submit": "Finalizar",
+    "close": "Fechar"
+  },
+  "success": {
+    "title": "Ficha Enviada!",
+    "message": "Sua ficha de anamnese foi enviada com sucesso para a clínica Damski Odonto."
+  },
+  "validation": {
+    "required": "Campo obrigatório",
+    "invalidCPF": "CPF inválido",
+    "invalidCEP": "CEP inválido",
+    "invalidWhatsApp": "WhatsApp deve ter 11 dígitos",
+    "requiredFields": "Campos obrigatórios",
+    "fillRequired": "Por favor, preencha todos os campos obrigatórios antes de continuar.",
+    "fillRequiredFinish": "Por favor, preencha todos os campos obrigatórios antes de finalizar."
+  },
+  "toast": {
+    "success": "Sucesso!",
+    "successMessage": "Ficha enviada com sucesso!",
+    "error": "Erro ao enviar",
+    "errorMessage": "Ocorreu um erro ao enviar a ficha. Tente novamente."
+  },
+  "page1": {
+    "title": "Informações Pessoais",
+    "fullName": "Nome Completo",
+    "rg": "RG",
+    "issuingBody": "Órgão Expedidor",
+    "cpf": "CPF",
+    "birthDate": "Data de Nascimento",
+    "sex": "Sexo",
+    "male": "Masculino",
+    "female": "Feminino",
+    "other": "Outro",
+    "maritalStatus": "Estado Civil",
+    "single": "Solteiro(a)",
+    "married": "Casado(a)",
+    "divorced": "Divorciado(a)",
+    "widowed": "Viúvo(a)",
+    "civilUnion": "União Estável",
+    "nationality": "Nacionalidade",
+    "consultationDate": "Data da Consulta",
+    "whatsapp": "WhatsApp",
+    "referredBy": "Indicado por",
+    "address": "Endereço",
+    "streetName": "Nome da Rua",
+    "number": "Número",
+    "complement": "Complemento",
+    "neighborhood": "Bairro",
+    "city": "Cidade",
+    "state": "Estado",
+    "zipCode": "CEP"
+  },
+  "page2": {
+    "title": "FICHA DE ANAMNESE",
+    "medicalTreatment": "Está em tratamento médico?",
+    "ifYesWhich": "Se sim, qual?",
+    "allergicMedication": "Alérgico a algum medicamento?",
+    "anyAllergy": "Tem algum tipo de alergia?",
+    "pregnant": "Está gestando?",
+    "ifYesHowManyMonths": "Se sim, quantos meses?",
+    "diabetes": "Tem diabetes?",
+    "ifYesWhichMedication": "Se sim, qual medicamento toma?",
+    "hepatitis": "Teve Hepatite?",
+    "ifYesHowLongAgo": "Se sim, há quanto tempo?"
+  },
+  "page3": {
+    "excessiveThirst": "Sente muita sede?",
+    "heartProblems": "Tem problemas cardíacos?",
+    "hivSyphilisChagas": "HIV, Sífilis ou Chagas?",
+    "drugs": "Utiliza algum tipo de droga?",
+    "smoker": "É fumante?",
+    "ifYesWhich": "Se sim, qual?",
+    "ifYesHowLong": "Se sim, há quanto tempo?"
+  },
+  "page4": {
+    "bloodPressure": "Como está sua pressão arterial?",
+    "low": "Baixa",
+    "normal": "Normal",
+    "high": "Alta",
+    "controlsPressure": "Controla a pressão?",
+    "ifYesWhichMedication": "Se sim, qual medicamento usa?",
+    "familyHistory": "Tem histórico familiar de doenças?",
+    "ifYesWhich": "Se sim, quais?",
+    "bleeding": "Como é seu sangramento?",
+    "normalBleeding": "Normal",
+    "excessiveBleeding": "Excessivo",
+    "surgery": "Já fez alguma cirurgia?",
+    "ifYesWhichYear": "Se sim, qual e em que ano?"
+  },
+  "page5": {
+    "title": "Exame Clínico",
+    "bleedingTeeth": "Sangra muito quando escova os dentes?",
+    "toothPain": "Sente dor nos dentes?",
+    "gumBleeding": "Gengiva sangra?",
+    "hadAnesthesia": "Já tomou anestesia?",
+    "anesthesiaMalaise": "Se sim, teve algum mal-estar?",
+    "satisfiedTeeth": "Está satisfeito(a) com seus dentes?",
+    "mainComplaint": "Qual sua principal queixa?"
+  },
+  "page6": {
+    "title": "Termos e Consentimentos",
+    "responsibilityTerm": "Autorizo e assumo a responsabilidade pelo tratamento odontológico que recebo, tendo a liberdade de perguntar quaisquer dúvidas sobre o tratamento, inclusive quanto aos materiais utilizados. Os procedimentos que serão realizados e os eventuais riscos me foram apresentados.",
+    "consentTerm": "Declaro sob as penas da lei que as informações nesta ficha contêm a verdade.",
+    "imageTerm": "Autorizo a Dra. Tamara Damski a utilizar minhas fotos, imagens, depoimentos e casos clínicos em materiais de marketing e divulgação da clínica.",
+    "lgpdTerm": "Declaro que as informações deste documento são verdadeiras. Autorizo a Dra. Tamara Damski a utilizar esses dados, nos termos da LGPD, para fins exclusivos de tratamento odontológico.",
+    "responsibleName": "Nome do responsável",
+    "minorName": "Nome do menor (se aplicável)",
+    "todayDate": "Data",
+    "termRequired": "Este termo é obrigatório",
+    "responsibleRequired": "Nome do responsável é obrigatório",
+    "dateRequired": "Data é obrigatória"
+  },
+  "options": {
+    "yes": "Sim",
+    "no": "Não"
+  }
+}
