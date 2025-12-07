@@ -7,9 +7,10 @@
     "step": "Step {{current}} of {{total}}"
   },
   "navigation": {
-    "previous": "Previous",
+    "previous": "Back",
     "next": "Next",
     "submit": "Submit",
+    "submitting": "Sending...",
     "close": "Close"
   },
   "success": {
@@ -23,7 +24,8 @@
     "invalidWhatsApp": "WhatsApp must have 11 digits",
     "requiredFields": "Required fields",
     "fillRequired": "Please fill in all required fields before continuing.",
-    "fillRequiredFinish": "Please fill in all required fields before finishing."
+    "fillRequiredFinish": "Please fill in all required fields before finishing.",
+    "fixErrors": "Please fix the fields highlighted in red before continuing."
   },
   "toast": {
     "success": "Success!",
@@ -75,48 +77,53 @@
     "ifYesHowLongAgo": "If yes, how long ago?"
   },
   "page3": {
-    "excessiveThirst": "Do you feel excessive thirst?",
-    "heartProblems": "Do you have heart problems?",
-    "hivSyphilisChagas": "HIV, Syphilis or Chagas?",
-    "drugs": "Do you use any type of drugs?",
+    "title": "ANAMNESIS FORM",
+    "excessiveThirst": "Do you often feel very thirsty?",
+    "heartProblems": "Have you had heart, circulatory or respiratory problems?",
+    "hivSyphilisChagas": "Are you a carrier of HIV, Syphilis or Chagas?",
+    "drugs": "Have you ever used drugs?",
+    "ifYesWhich": "If yes, which ones?",
     "smoker": "Are you a smoker?",
-    "ifYesWhich": "If yes, which one?",
     "ifYesHowLong": "If yes, for how long?"
   },
   "page4": {
-    "bloodPressure": "How is your blood pressure?",
+    "title": "ANAMNESIS FORM",
+    "bloodPressure": "Blood pressure",
     "low": "Low",
     "normal": "Normal",
     "high": "High",
-    "controlsPressure": "Do you control your blood pressure?",
-    "ifYesWhichMedication": "If yes, which medication do you use?",
-    "familyHistory": "Do you have a family history of diseases?",
+    "controlsPressure": "Do you control your blood pressure with medication?",
+    "ifYesWhichMedication": "If yes, which ones?",
+    "familyHistory": "Is there a family history of diseases?",
     "ifYesWhich": "If yes, which ones?",
-    "bleeding": "How is your bleeding?",
+    "bleeding": "When bleeding occurs, it is",
     "normalBleeding": "Normal",
     "excessiveBleeding": "Excessive",
     "surgery": "Have you had any surgery?",
-    "ifYesWhichYear": "If yes, which one and what year?"
+    "ifYesWhichYear": "If yes, which one?"
   },
   "page5": {
-    "title": "Clinical Examination",
-    "bleedingTeeth": "Do you bleed a lot when brushing your teeth?",
-    "toothPain": "Do you feel pain in your teeth?",
-    "gumBleeding": "Does your gum bleed?",
-    "hadAnesthesia": "Have you ever had anesthesia?",
+    "title": "ANAMNESIS FORM",
+    "bleedingTeeth": "Do you bleed a lot when extracting a tooth?",
+    "toothPain": "Do you have pain in your teeth or gums?",
+    "gumBleeding": "Do your gums bleed easily?",
+    "hadAnesthesia": "Have you ever needed anesthesia for dental treatment?",
     "anesthesiaMalaise": "If yes, did you feel unwell?",
-    "satisfiedTeeth": "Are you satisfied with your teeth?",
-    "mainComplaint": "What is your main complaint?"
+    "satisfiedTeeth": "Are you satisfied with the appearance of your teeth?",
+    "satisfiedPlaceholder": "Describe how you feel about your teeth...",
+    "mainComplaint": "What is your main complaint?",
+    "complaintPlaceholder": "Describe what bothers you most or brought you here..."
   },
   "page6": {
     "title": "Terms and Consents",
-    "responsibilityTerm": "I authorize and take responsibility for the dental treatment I receive, having the freedom to ask any questions about the treatment, including the materials used. The procedures to be performed and any risks have been presented to me.",
-    "consentTerm": "I declare under penalty of law that the information in this form is true.",
-    "imageTerm": "I authorize Dr. Tamara Damski to use my photos, images, testimonials and clinical cases in marketing and promotional materials for the clinic.",
-    "lgpdTerm": "I declare that the information in this document is true. I authorize Dr. Tamara Damski to use this data, under the terms of LGPD, exclusively for dental treatment purposes.",
-    "responsibleName": "Responsible party's name",
-    "minorName": "Minor's name (if applicable)",
-    "todayDate": "Date",
+    "responsibilityTerm": "I declare that all information provided is true and I authorize the necessary dental procedures. I commit to updating health data whenever there are changes.",
+    "consentTerm": "I declare that I am aware of the procedures, risks and alternatives, and I authorize the execution of the treatment proposed by the professional.",
+    "imageTerm": "I allow the use of intra/extra-buccal photos for scientific, academic and documentary purposes, maintaining patient anonymity.",
+    "lgpdTerm": "I authorize the use of my personal data in accordance with the General Data Protection Law (LGPD), and I may revoke consent at any time.",
+    "digitalSignature": "Digital Signature",
+    "responsibleName": "Responsible Party's Name",
+    "minorName": "Minor's Name (if applicable)",
+    "todayDate": "Today's Date",
     "termRequired": "This term is required",
     "responsibleRequired": "Responsible party's name is required",
     "dateRequired": "Date is required"

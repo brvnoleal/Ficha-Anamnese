@@ -7,9 +7,10 @@
     "step": "Etapa {{current}} de {{total}}"
   },
   "navigation": {
-    "previous": "Anterior",
-    "next": "Próxima",
+    "previous": "Voltar",
+    "next": "Próximo",
     "submit": "Finalizar",
+    "submitting": "Enviando...",
     "close": "Fechar"
   },
   "success": {
@@ -23,7 +24,8 @@
     "invalidWhatsApp": "WhatsApp deve ter 11 dígitos",
     "requiredFields": "Campos obrigatórios",
     "fillRequired": "Por favor, preencha todos os campos obrigatórios antes de continuar.",
-    "fillRequiredFinish": "Por favor, preencha todos os campos obrigatórios antes de finalizar."
+    "fillRequiredFinish": "Por favor, preencha todos os campos obrigatórios antes de finalizar.",
+    "fixErrors": "Por favor, corrija os campos destacados em vermelho antes de continuar."
   },
   "toast": {
     "success": "Sucesso!",
@@ -75,48 +77,53 @@
     "ifYesHowLongAgo": "Se sim, há quanto tempo?"
   },
   "page3": {
-    "excessiveThirst": "Sente muita sede?",
-    "heartProblems": "Tem problemas cardíacos?",
-    "hivSyphilisChagas": "HIV, Sífilis ou Chagas?",
-    "drugs": "Utiliza algum tipo de droga?",
+    "title": "FICHA DE ANAMNESE",
+    "excessiveThirst": "Costuma sentir muita sede?",
+    "heartProblems": "Teve problemas cardíacos, circulatórios ou respiratórios?",
+    "hivSyphilisChagas": "É portador de HIV, Sífilis ou Chagas?",
+    "drugs": "Já usou drogas?",
+    "ifYesWhich": "Se sim, quais?",
     "smoker": "É fumante?",
-    "ifYesWhich": "Se sim, qual?",
-    "ifYesHowLong": "Se sim, há quanto tempo?"
+    "ifYesHowLong": "Se sim, fuma há quanto tempo?"
   },
   "page4": {
-    "bloodPressure": "Como está sua pressão arterial?",
+    "title": "FICHA DE ANAMNESE",
+    "bloodPressure": "Pressão arterial",
     "low": "Baixa",
     "normal": "Normal",
     "high": "Alta",
-    "controlsPressure": "Controla a pressão?",
-    "ifYesWhichMedication": "Se sim, qual medicamento usa?",
-    "familyHistory": "Tem histórico familiar de doenças?",
+    "controlsPressure": "Controla a pressão com medicamentos?",
+    "ifYesWhichMedication": "Se sim, quais?",
+    "familyHistory": "Há histórico de doenças na família?",
     "ifYesWhich": "Se sim, quais?",
-    "bleeding": "Como é seu sangramento?",
+    "bleeding": "Quando ocorre um sangramento, ele é",
     "normalBleeding": "Normal",
     "excessiveBleeding": "Excessivo",
-    "surgery": "Já fez alguma cirurgia?",
-    "ifYesWhichYear": "Se sim, qual e em que ano?"
+    "surgery": "Já passou por cirurgia?",
+    "ifYesWhichYear": "Se sim, qual?"
   },
   "page5": {
-    "title": "Exame Clínico",
-    "bleedingTeeth": "Sangra muito quando escova os dentes?",
-    "toothPain": "Sente dor nos dentes?",
-    "gumBleeding": "Gengiva sangra?",
-    "hadAnesthesia": "Já tomou anestesia?",
-    "anesthesiaMalaise": "Se sim, teve algum mal-estar?",
-    "satisfiedTeeth": "Está satisfeito(a) com seus dentes?",
-    "mainComplaint": "Qual sua principal queixa?"
+    "title": "FICHA DE ANAMNESE",
+    "bleedingTeeth": "Sangra muito quando extrai um dente?",
+    "toothPain": "Está com dor nos dentes ou gengiva?",
+    "gumBleeding": "A gengiva sangra com facilidade?",
+    "hadAnesthesia": "Já necessitou de anestesia em tratamento dentário?",
+    "anesthesiaMalaise": "Se sim, teve mal estar?",
+    "satisfiedTeeth": "Está satisfeito(a) com a aparência de seus dentes?",
+    "satisfiedPlaceholder": "Descreva como se sente em relação aos seus dentes...",
+    "mainComplaint": "Qual sua principal queixa?",
+    "complaintPlaceholder": "Descreva o que mais te incomoda ou te trouxe aqui..."
   },
   "page6": {
     "title": "Termos e Consentimentos",
-    "responsibilityTerm": "Autorizo e assumo a responsabilidade pelo tratamento odontológico que recebo, tendo a liberdade de perguntar quaisquer dúvidas sobre o tratamento, inclusive quanto aos materiais utilizados. Os procedimentos que serão realizados e os eventuais riscos me foram apresentados.",
-    "consentTerm": "Declaro sob as penas da lei que as informações nesta ficha contêm a verdade.",
-    "imageTerm": "Autorizo a Dra. Tamara Damski a utilizar minhas fotos, imagens, depoimentos e casos clínicos em materiais de marketing e divulgação da clínica.",
-    "lgpdTerm": "Declaro que as informações deste documento são verdadeiras. Autorizo a Dra. Tamara Damski a utilizar esses dados, nos termos da LGPD, para fins exclusivos de tratamento odontológico.",
-    "responsibleName": "Nome do responsável",
-    "minorName": "Nome do menor (se aplicável)",
-    "todayDate": "Data",
+    "responsibilityTerm": "Declaro que todas as informações prestadas são verdadeiras e autorizo os procedimentos odontológicos necessários. Comprometo-me a atualizar dados de saúde sempre que houver mudanças.",
+    "consentTerm": "Declaro estar ciente dos procedimentos, riscos e alternativas, e autorizo a execução do tratamento proposto pelo profissional.",
+    "imageTerm": "Permito o uso de fotos intra/extra-bucais para fins científicos, acadêmicos e documentais, mantendo o anonimato do paciente.",
+    "lgpdTerm": "Autorizo o uso dos meus dados pessoais conforme a Lei Geral de Proteção de Dados (LGPD), podendo revogar o consentimento a qualquer momento.",
+    "digitalSignature": "Assinatura Digital",
+    "responsibleName": "Nome do Responsável",
+    "minorName": "Nome do Menor (se aplicável)",
+    "todayDate": "Data de Hoje",
     "termRequired": "Este termo é obrigatório",
     "responsibleRequired": "Nome do responsável é obrigatório",
     "dateRequired": "Data é obrigatória"

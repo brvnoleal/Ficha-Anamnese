@@ -543,14 +543,14 @@ export const MedicalForm: React.FC = () => {
               {/* Página 2 - Anamnese Parte 1 */}
               {currentStep === 2 && (
                 <>
-                  <h2 className="text-xl font-semibold text-foreground mb-6">FICHA DE ANAMNESE</h2>
+                  <h2 className="text-xl font-semibold text-foreground mb-6">{t('page2.title')}</h2>
                   
                   <div className="space-y-6">
                     <div>
                       <FormRadio
                         id="tratamento_medico"
                         name="tratamento_medico"
-                        label="Está em tratamento médico?"
+                        label={t('page2.medicalTreatment')}
                         value={formData.tratamento_medico}
                         onChange={(value) => updateField('tratamento_medico', value)}
                         options={YES_NO_OPTIONS}
@@ -562,7 +562,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="tratamento_medico_detalhes"
                             name="tratamento_medico_detalhes"
-                            label="Se sim, qual?"
+                            label={t('page2.ifYesWhich')}
                             value={formData.tratamento_medico_detalhes}
                             onChange={(value) => updateField('tratamento_medico_detalhes', value)}
                             error={errors.tratamento_medico_detalhes}
@@ -575,7 +575,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="alergico_medicamento"
                         name="alergico_medicamento"
-                        label="Alérgico a algum medicamento?"
+                        label={t('page2.allergicMedication')}
                         value={formData.alergico_medicamento}
                         onChange={(value) => updateField('alergico_medicamento', value)}
                         options={YES_NO_OPTIONS}
@@ -587,7 +587,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="alergico_medicamento_detalhes"
                             name="alergico_medicamento_detalhes"
-                            label="Se sim, qual?"
+                            label={t('page2.ifYesWhich')}
                             value={formData.alergico_medicamento_detalhes}
                             onChange={(value) => updateField('alergico_medicamento_detalhes', value)}
                             error={errors.alergico_medicamento_detalhes}
@@ -600,7 +600,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="alergia"
                         name="alergia"
-                        label="Tem algum tipo de alergia?"
+                        label={t('page2.anyAllergy')}
                         value={formData.alergia}
                         onChange={(value) => updateField('alergia', value)}
                         options={YES_NO_OPTIONS}
@@ -612,7 +612,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="alergia_detalhes"
                             name="alergia_detalhes"
-                            label="Se sim, qual?"
+                            label={t('page2.ifYesWhich')}
                             value={formData.alergia_detalhes}
                             onChange={(value) => updateField('alergia_detalhes', value)}
                             error={errors.alergia_detalhes}
@@ -625,7 +625,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="gestando"
                         name="gestando"
-                        label="Está gestando?"
+                        label={t('page2.pregnant')}
                         value={formData.gestando}
                         onChange={(value) => updateField('gestando', value)}
                         options={YES_NO_OPTIONS}
@@ -637,7 +637,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="gestando_detalhes"
                             name="gestando_detalhes"
-                            label="Se sim, quantos meses?"
+                            label={t('page2.ifYesHowManyMonths')}
                             value={formData.gestando_detalhes}
                             onChange={(value) => updateField('gestando_detalhes', value)}
                             error={errors.gestando_detalhes}
@@ -650,7 +650,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="diabetes"
                         name="diabetes"
-                        label="Tem diabetes?"
+                        label={t('page2.diabetes')}
                         value={formData.diabetes}
                         onChange={(value) => updateField('diabetes', value)}
                         options={YES_NO_OPTIONS}
@@ -662,7 +662,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="diabetes_detalhes"
                             name="diabetes_detalhes"
-                            label="Se sim, qual medicamento toma?"
+                            label={t('page2.ifYesWhichMedication')}
                             value={formData.diabetes_detalhes}
                             onChange={(value) => updateField('diabetes_detalhes', value)}
                             error={errors.diabetes_detalhes}
@@ -675,7 +675,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="hepatite"
                         name="hepatite"
-                        label="Teve Hepatite?"
+                        label={t('page2.hepatitis')}
                         value={formData.hepatite}
                         onChange={(value) => updateField('hepatite', value)}
                         options={YES_NO_OPTIONS}
@@ -687,7 +687,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="hepatite_detalhes"
                             name="hepatite_detalhes"
-                            label="Se sim, há quanto tempo?"
+                            label={t('page2.ifYesHowLongAgo')}
                             value={formData.hepatite_detalhes}
                             onChange={(value) => updateField('hepatite_detalhes', value)}
                             error={errors.hepatite_detalhes}
@@ -702,13 +702,13 @@ export const MedicalForm: React.FC = () => {
               {/* Página 3 - Anamnese Parte 2 */}
               {currentStep === 3 && (
                 <>
-                  <h2 className="text-xl font-semibold text-foreground mb-6">FICHA DE ANAMNESE</h2>
+                  <h2 className="text-xl font-semibold text-foreground mb-6">{t('page3.title')}</h2>
                   
                   <div className="space-y-6">
                     <FormRadio
                       id="muita_sede"
                       name="muita_sede"
-                      label="Costuma sentir muita sede?"
+                      label={t('page3.excessiveThirst')}
                       value={formData.muita_sede}
                       onChange={(value) => updateField('muita_sede', value)}
                       options={YES_NO_OPTIONS}
@@ -719,7 +719,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="problemas_cardiacos"
                         name="problemas_cardiacos"
-                        label="Teve problemas cardíacos, circulatórios ou respiratórios?"
+                        label={t('page3.heartProblems')}
                         value={formData.problemas_cardiacos}
                         onChange={(value) => updateField('problemas_cardiacos', value)}
                         options={YES_NO_OPTIONS}
@@ -731,7 +731,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="problemas_cardiacos_detalhes"
                             name="problemas_cardiacos_detalhes"
-                            label="Se sim, qual?"
+                            label={t('page3.ifYesWhich')}
                             value={formData.problemas_cardiacos_detalhes}
                             onChange={(value) => updateField('problemas_cardiacos_detalhes', value)}
                             error={errors.problemas_cardiacos_detalhes}
@@ -744,7 +744,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="hiv_sifilis_chagas"
                         name="hiv_sifilis_chagas"
-                        label="É portador de HIV, Sífilis ou Chagas?"
+                        label={t('page3.hivSyphilisChagas')}
                         value={formData.hiv_sifilis_chagas}
                         onChange={(value) => updateField('hiv_sifilis_chagas', value)}
                         options={YES_NO_OPTIONS}
@@ -756,7 +756,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="hiv_sifilis_chagas_detalhes"
                             name="hiv_sifilis_chagas_detalhes"
-                            label="Se sim, qual?"
+                            label={t('page3.ifYesWhich')}
                             value={formData.hiv_sifilis_chagas_detalhes}
                             onChange={(value) => updateField('hiv_sifilis_chagas_detalhes', value)}
                             error={errors.hiv_sifilis_chagas_detalhes}
@@ -769,7 +769,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="drogas"
                         name="drogas"
-                        label="Já usou drogas?"
+                        label={t('page3.drugs')}
                         value={formData.drogas}
                         onChange={(value) => updateField('drogas', value)}
                         options={YES_NO_OPTIONS}
@@ -781,7 +781,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="drogas_detalhes"
                             name="drogas_detalhes"
-                            label="Se sim, quais?"
+                            label={t('page3.ifYesWhich')}
                             value={formData.drogas_detalhes}
                             onChange={(value) => updateField('drogas_detalhes', value)}
                             error={errors.drogas_detalhes}
@@ -794,7 +794,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="fumante"
                         name="fumante"
-                        label="É fumante?"
+                        label={t('page3.smoker')}
                         value={formData.fumante}
                         onChange={(value) => updateField('fumante', value)}
                         options={YES_NO_OPTIONS}
@@ -806,7 +806,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="fumante_detalhes"
                             name="fumante_detalhes"
-                            label="Se sim, fuma há quanto tempo?"
+                            label={t('page3.ifYesHowLong')}
                             value={formData.fumante_detalhes}
                             onChange={(value) => updateField('fumante_detalhes', value)}
                             error={errors.fumante_detalhes}
@@ -821,13 +821,13 @@ export const MedicalForm: React.FC = () => {
               {/* Página 4 - Anamnese Parte 3 */}
               {currentStep === 4 && (
                 <>
-                  <h2 className="text-xl font-semibold text-foreground mb-6">FICHA DE ANAMNESE</h2>
+                  <h2 className="text-xl font-semibold text-foreground mb-6">{t('page4.title')}</h2>
                   
                   <div className="space-y-6">
                     <FormRadio
                       id="pressao_arterial"
                       name="pressao_arterial"
-                      label="Pressão arterial"
+                      label={t('page4.bloodPressure')}
                       value={formData.pressao_arterial}
                       onChange={(value) => updateField('pressao_arterial', value)}
                       options={PRESSURE_OPTIONS}
@@ -838,7 +838,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="controla_pressao"
                         name="controla_pressao"
-                        label="Controla a pressão com medicamentos?"
+                        label={t('page4.controlsPressure')}
                         value={formData.controla_pressao}
                         onChange={(value) => updateField('controla_pressao', value)}
                         options={YES_NO_OPTIONS}
@@ -850,7 +850,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="controla_pressao_detalhes"
                             name="controla_pressao_detalhes"
-                            label="Se sim, quais?"
+                            label={t('page4.ifYesWhichMedication')}
                             value={formData.controla_pressao_detalhes}
                             onChange={(value) => updateField('controla_pressao_detalhes', value)}
                             error={errors.controla_pressao_detalhes}
@@ -863,7 +863,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="historico_familia"
                         name="historico_familia"
-                        label="Há histórico de doenças na família?"
+                        label={t('page4.familyHistory')}
                         value={formData.historico_familia}
                         onChange={(value) => updateField('historico_familia', value)}
                         options={YES_NO_OPTIONS}
@@ -875,7 +875,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="historico_familia_detalhes"
                             name="historico_familia_detalhes"
-                            label="Se sim, quais?"
+                            label={t('page4.ifYesWhich')}
                             value={formData.historico_familia_detalhes}
                             onChange={(value) => updateField('historico_familia_detalhes', value)}
                             error={errors.historico_familia_detalhes}
@@ -887,7 +887,7 @@ export const MedicalForm: React.FC = () => {
                     <FormRadio
                       id="sangramento"
                       name="sangramento"
-                      label="Quando ocorre um sangramento, ele é"
+                      label={t('page4.bleeding')}
                       value={formData.sangramento}
                       onChange={(value) => updateField('sangramento', value)}
                       options={BLEEDING_OPTIONS}
@@ -898,7 +898,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="cirurgia"
                         name="cirurgia"
-                        label="Já passou por cirurgia?"
+                        label={t('page4.surgery')}
                         value={formData.cirurgia}
                         onChange={(value) => updateField('cirurgia', value)}
                         options={YES_NO_OPTIONS}
@@ -910,7 +910,7 @@ export const MedicalForm: React.FC = () => {
                           <FormInput
                             id="cirurgia_detalhes"
                             name="cirurgia_detalhes"
-                            label="Se sim, qual?"
+                            label={t('page4.ifYesWhichYear')}
                             value={formData.cirurgia_detalhes}
                             onChange={(value) => updateField('cirurgia_detalhes', value)}
                             error={errors.cirurgia_detalhes}
@@ -925,13 +925,13 @@ export const MedicalForm: React.FC = () => {
               {/* Página 5 - Anamnese Parte 4 */}
               {currentStep === 5 && (
                 <>
-                  <h2 className="text-xl font-semibold text-foreground mb-6">FICHA DE ANAMNESE</h2>
+                  <h2 className="text-xl font-semibold text-foreground mb-6">{t('page5.title')}</h2>
                   
                   <div className="space-y-6">
                     <FormRadio
                       id="sangra_dente"
                       name="sangra_dente"
-                      label="Sangra muito quando extrai um dente?"
+                      label={t('page5.bleedingTeeth')}
                       value={formData.sangra_dente}
                       onChange={(value) => updateField('sangra_dente', value)}
                       options={YES_NO_OPTIONS}
@@ -941,7 +941,7 @@ export const MedicalForm: React.FC = () => {
                     <FormRadio
                       id="dor_dentes"
                       name="dor_dentes"
-                      label="Está com dor nos dentes ou gengiva?"
+                      label={t('page5.toothPain')}
                       value={formData.dor_dentes}
                       onChange={(value) => updateField('dor_dentes', value)}
                       options={YES_NO_OPTIONS}
@@ -951,7 +951,7 @@ export const MedicalForm: React.FC = () => {
                     <FormRadio
                       id="gengiva_sangra"
                       name="gengiva_sangra"
-                      label="A gengiva sangra com facilidade?"
+                      label={t('page5.gumBleeding')}
                       value={formData.gengiva_sangra}
                       onChange={(value) => updateField('gengiva_sangra', value)}
                       options={YES_NO_OPTIONS}
@@ -962,7 +962,7 @@ export const MedicalForm: React.FC = () => {
                       <FormRadio
                         id="anestesia"
                         name="anestesia"
-                        label="Já necessitou de anestesia em tratamento dentário?"
+                        label={t('page5.hadAnesthesia')}
                         value={formData.anestesia}
                         onChange={(value) => updateField('anestesia', value)}
                         options={YES_NO_OPTIONS}
@@ -974,7 +974,7 @@ export const MedicalForm: React.FC = () => {
                           <FormRadio
                             id="anestesia_mal_estar"
                             name="anestesia_mal_estar"
-                            label="Se sim, teve mal estar?"
+                            label={t('page5.anesthesiaMalaise')}
                             value={formData.anestesia_mal_estar}
                             onChange={(value) => updateField('anestesia_mal_estar', value)}
                             options={YES_NO_OPTIONS}
@@ -987,20 +987,20 @@ export const MedicalForm: React.FC = () => {
                     <FormTextarea
                       id="satisfacao_dentes"
                       name="satisfacao_dentes"
-                      label="Está satisfeito(a) com a aparência de seus dentes?"
+                      label={t('page5.satisfiedTeeth')}
                       value={formData.satisfacao_dentes}
                       onChange={(value) => updateField('satisfacao_dentes', value)}
-                      placeholder="Descreva como se sente em relação aos seus dentes..."
+                      placeholder={t('page5.satisfiedPlaceholder')}
                       error={errors.satisfacao_dentes}
                     />
                     
                     <FormTextarea
                       id="principal_queixa"
                       name="principal_queixa"
-                      label="Qual sua principal queixa?"
+                      label={t('page5.mainComplaint')}
                       value={formData.principal_queixa}
                       onChange={(value) => updateField('principal_queixa', value)}
-                      placeholder="Descreva o que mais te incomoda ou te trouxe aqui..."
+                      placeholder={t('page5.complaintPlaceholder')}
                       error={errors.principal_queixa}
                     />
                   </div>
@@ -1010,14 +1010,14 @@ export const MedicalForm: React.FC = () => {
               {/* Página 6 - Termos e LGPD */}
               {currentStep === 6 && (
                 <>
-                  <h2 className="text-xl font-semibold text-foreground mb-6">Termos e Consentimentos</h2>
+                  <h2 className="text-xl font-semibold text-foreground mb-6">{t('page6.title')}</h2>
                   
                   <div className="space-y-6">
                     <div className="space-y-4">
                       <FormCheckbox
                         id="termo_responsabilidade"
                         name="termo_responsabilidade"
-                        label="Declaro que todas as informações prestadas são verdadeiras e autorizo os procedimentos odontológicos necessários. Comprometo-me a atualizar dados de saúde sempre que houver mudanças."
+                        label={t('page6.responsibilityTerm')}
                         checked={formData.termo_responsabilidade}
                         onChange={(checked) => updateField('termo_responsabilidade', checked)}
                         required
@@ -1027,7 +1027,7 @@ export const MedicalForm: React.FC = () => {
                       <FormCheckbox
                         id="termo_consentimento"
                         name="termo_consentimento"
-                        label="Declaro estar ciente dos procedimentos, riscos e alternativas, e autorizo a execução do tratamento proposto pelo profissional."
+                        label={t('page6.consentTerm')}
                         checked={formData.termo_consentimento}
                         onChange={(checked) => updateField('termo_consentimento', checked)}
                         required
@@ -1037,7 +1037,7 @@ export const MedicalForm: React.FC = () => {
                       <FormCheckbox
                         id="termo_imagem"
                         name="termo_imagem"
-                        label="Permito o uso de fotos intra/extra-bucais para fins científicos, acadêmicos e documentais, mantendo o anonimato do paciente."
+                        label={t('page6.imageTerm')}
                         checked={formData.termo_imagem}
                         onChange={(checked) => updateField('termo_imagem', checked)}
                         required
@@ -1047,7 +1047,7 @@ export const MedicalForm: React.FC = () => {
                       <FormCheckbox
                         id="termo_lgpd"
                         name="termo_lgpd"
-                        label="Autorizo o uso dos meus dados pessoais conforme a Lei Geral de Proteção de Dados (LGPD), podendo revogar o consentimento a qualquer momento."
+                        label={t('page6.lgpdTerm')}
                         checked={formData.termo_lgpd}
                         onChange={(checked) => updateField('termo_lgpd', checked)}
                         required
@@ -1056,12 +1056,12 @@ export const MedicalForm: React.FC = () => {
                     </div>
                     
                     <div className="pt-4 border-t border-border space-y-4">
-                      <h3 className="text-lg font-medium text-foreground">Assinatura Digital</h3>
+                      <h3 className="text-lg font-medium text-foreground">{t('page6.digitalSignature')}</h3>
                       
                       <FormInput
                         id="nome_responsavel"
                         name="nome_responsavel"
-                        label="Nome do Responsável"
+                        label={t('page6.responsibleName')}
                         value={formData.nome_responsavel}
                         onChange={(value) => updateField('nome_responsavel', value)}
                         icon={User}
@@ -1072,7 +1072,7 @@ export const MedicalForm: React.FC = () => {
                       <FormInput
                         id="nome_menor"
                         name="nome_menor"
-                        label="Nome do Menor (se aplicável)"
+                        label={t('page6.minorName')}
                         value={formData.nome_menor}
                         onChange={(value) => updateField('nome_menor', value)}
                         icon={User}
@@ -1082,7 +1082,7 @@ export const MedicalForm: React.FC = () => {
                       <FormInput
                         id="data_hoje"
                         name="data_hoje"
-                        label="Data de Hoje"
+                        label={t('page6.todayDate')}
                         value={formData.data_hoje}
                         onChange={(value) => updateField('data_hoje', value)}
                         type="date"
@@ -1104,7 +1104,7 @@ export const MedicalForm: React.FC = () => {
         <Alert className="mt-4" variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
-            Por favor, corrija os campos destacados em vermelho antes de continuar.
+            {t('validation.fixErrors')}
           </AlertDescription>
         </Alert>
       )}
@@ -1119,7 +1119,7 @@ export const MedicalForm: React.FC = () => {
             className="medical-button-secondary flex-1 min-w-0"
           >
             <ChevronLeft size={20} className="mr-2 flex-shrink-0" />
-            <span className="truncate">Voltar</span>
+            <span className="truncate">{t('navigation.previous')}</span>
           </Button>
           
           {currentStep < TOTAL_STEPS ? (
@@ -1127,7 +1127,7 @@ export const MedicalForm: React.FC = () => {
               onClick={nextStep}
               className="medical-button-primary flex-1 min-w-0"
             >
-              <span className="truncate">Próximo</span>
+              <span className="truncate">{t('navigation.next')}</span>
               <ChevronRight size={20} className="ml-2 flex-shrink-0" />
             </Button>
           ) : (
@@ -1139,12 +1139,12 @@ export const MedicalForm: React.FC = () => {
               {isSubmitting ? (
                 <>
                   <Loader2 size={20} className="mr-2 flex-shrink-0 animate-spin" />
-                  <span className="truncate">Enviando...</span>
+                  <span className="truncate">{t('navigation.submitting')}</span>
                 </>
               ) : (
                 <>
                   <Send size={20} className="mr-2 flex-shrink-0" />
-                  <span className="truncate">Finalizar</span>
+                  <span className="truncate">{t('navigation.submit')}</span>
                 </>
               )}
             </Button>
