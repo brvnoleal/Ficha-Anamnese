@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* High Contrast Mode */
+/* High Contrast Mode - Full Page */
 .high-contrast {
   --background: 0 0% 100%;
   --foreground: 0 0% 0%;
@@ -10,34 +10,107 @@
   --card-foreground: 0 0% 0%;
   --primary: 0 0% 0%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 0 0% 90%;
+  --secondary: 0 0% 96%;
   --secondary-foreground: 0 0% 0%;
-  --muted: 0 0% 85%;
-  --muted-foreground: 0 0% 10%;
-  --accent: 0 0% 85%;
+  --muted: 0 0% 90%;
+  --muted-foreground: 0 0% 15%;
+  --accent: 0 0% 90%;
   --accent-foreground: 0 0% 0%;
   --border: 0 0% 0%;
-  --input: 0 0% 0%;
+  --input: 0 0% 96%;
   --ring: 0 0% 0%;
+  --icon-pink: 0 0% 0%;
+  --destructive: 0 100% 40%;
+  --destructive-foreground: 0 0% 100%;
+  
+  /* Override gradients for high contrast */
+  --gradient-primary: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 20%));
+  --gradient-secondary: linear-gradient(135deg, hsl(0 0% 90%), hsl(0 0% 85%));
+  --gradient-success: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 20%));
+  --gradient-pink-pastel: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 20%));
+}
+
+.high-contrast .medical-title {
+  background: hsl(0 0% 0%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+.high-contrast .medical-subtitle {
+  color: hsl(0 0% 0%) !important;
 }
 
 .high-contrast .medical-card {
   border: 2px solid hsl(0 0% 0%);
-}
-
-.high-contrast .medical-input {
-  border: 2px solid hsl(0 0% 0%);
-}
-
-.high-contrast .medical-button-primary {
-  background: hsl(0 0% 0%);
-  color: hsl(0 0% 100%);
-}
-
-.high-contrast .medical-button-secondary {
   background: hsl(0 0% 100%);
-  color: hsl(0 0% 0%);
+}
+
+.high-contrast .medical-input,
+.high-contrast input,
+.high-contrast select,
+.high-contrast textarea {
+  border: 2px solid hsl(0 0% 0%) !important;
+  background: hsl(0 0% 100%) !important;
+  color: hsl(0 0% 0%) !important;
+}
+
+.high-contrast .medical-input:focus,
+.high-contrast input:focus,
+.high-contrast select:focus,
+.high-contrast textarea:focus {
+  outline: 3px solid hsl(0 0% 0%) !important;
+  outline-offset: 2px;
+}
+
+.high-contrast .medical-button-primary,
+.high-contrast button[class*="bg-primary"],
+.high-contrast .bg-primary {
+  background: hsl(0 0% 0%) !important;
+  color: hsl(0 0% 100%) !important;
   border: 2px solid hsl(0 0% 0%);
+}
+
+.high-contrast .medical-button-secondary,
+.high-contrast button[class*="bg-secondary"],
+.high-contrast .bg-secondary {
+  background: hsl(0 0% 100%) !important;
+  color: hsl(0 0% 0%) !important;
+  border: 2px solid hsl(0 0% 0%);
+}
+
+.high-contrast label {
+  color: hsl(0 0% 0%) !important;
+  font-weight: 600;
+}
+
+.high-contrast p,
+.high-contrast span,
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast h5,
+.high-contrast h6 {
+  color: hsl(0 0% 0%) !important;
+}
+
+.high-contrast a {
+  color: hsl(0 0% 0%) !important;
+  text-decoration: underline;
+}
+
+.high-contrast [data-state="checked"] {
+  background: hsl(0 0% 0%) !important;
+  border-color: hsl(0 0% 0%) !important;
+}
+
+.high-contrast .medical-progress {
+  background: hsl(0 0% 80%) !important;
+  border: 1px solid hsl(0 0% 0%);
+}
+
+.high-contrast .medical-progress-bar {
+  background: hsl(0 0% 0%) !important;
 }
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
