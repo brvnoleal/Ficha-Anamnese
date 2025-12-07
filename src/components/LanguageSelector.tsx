@@ -17,7 +17,7 @@ export const LanguageSelector: React.FC = () => {
   };
 
   return (
-    <div className="fixed top-4 right-4 z-50 flex gap-2">
+    <div className="fixed top-4 right-4 z-50 flex gap-1.5">
       {languages.map((lang) => (
         <motion.button
           key={lang.code}
@@ -25,11 +25,11 @@ export const LanguageSelector: React.FC = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           className={`
-            w-10 h-10 rounded-full flex items-center justify-center text-xl
-            transition-all duration-200 shadow-md
+            w-5 h-5 rounded-full flex items-center justify-center text-xs
+            transition-all duration-200 shadow-sm
             ${currentLang === lang.code 
-              ? 'ring-2 ring-primary ring-offset-2 bg-white' 
-              : 'bg-white/80 hover:bg-white opacity-70 hover:opacity-100'
+              ? 'opacity-100 ring-1 ring-primary ring-offset-1 bg-white' 
+              : 'opacity-40 bg-white/80 hover:opacity-70'
             }
           `}
           title={lang.name}
