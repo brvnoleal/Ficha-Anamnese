@@ -195,7 +195,10 @@ export const MedicalForm: React.FC = () => {
   };
 
   const submitForm = async () => {
-    if (!validateStep(currentStep)) {
+    // Validar todos os passos antes de enviar
+    const invalidStep = [1, 2, 3, 4, 5, 6].find((s) => !validateStep(s));
+    if (invalidStep) {
+      setCurrentStep(invalidStep);
       toast({
         title: t('validation.requiredFields'),
         description: t('validation.fillRequiredFinish'),
@@ -207,21 +210,33 @@ export const MedicalForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Preparar dados para envio (extrair apenas dígitos dos campos mascarados)
+      // Normalizar campos de data: string vazia -> null (Postgres date)
+      const dateOrNull = (v: string) => (v && v.trim() ? v : null);
+
       const submitData = {
         ...formData,
+        // Máscaras: enviar apenas dígitos
         cpf: extractDigits(formData.cpf),
         cep: extractDigits(formData.cep),
-        whatsapp: extractDigits(formData.whatsapp)
+        whatsapp: extractDigits(formData.whatsapp),
+        // Datas: garantir formato YYYY-MM-DD ou null
+        data_nascimento: dateOrNull(formData.data_nascimento),
+        data_consulta: dateOrNull(formData.data_consulta),
+        data_hoje: dateOrNull(formData.data_hoje) ?? getCurrentDate(),
+        // Termos: booleanos garantidos
+        termo_responsabilidade: !!formData.termo_responsabilidade,
+        termo_consentimento: !!formData.termo_consentimento,
+        termo_imagem: !!formData.termo_imagem,
+        termo_lgpd: !!formData.termo_lgpd,
       };
 
-      // Salvar no Supabase
       const { error: supabaseError } = await externalSupabase.from('Dados').insert(submitData);
 
       if (supabaseError) {
         console.error('Erro do Supabase:', supabaseError);
         throw new Error('Erro ao enviar formulário');
       }
+
 
 
       setIsCompleted(true);
