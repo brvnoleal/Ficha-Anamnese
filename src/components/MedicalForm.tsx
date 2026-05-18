@@ -233,12 +233,38 @@ export const MedicalForm: React.FC = () => {
         termo_lgpd: !!formData.termo_lgpd,
       };
 
-      const { error: supabaseError } = await externalSupabase.from('Dados').insert(submitData);
+      // Enviar em paralelo: Supabase + Google Sheets (Apps Script Web App)
+      // Apps Script usa text/plain pra evitar preflight CORS; modo no-cors,
+      // resposta é opaca mas a linha é gravada na planilha.
+      const [supabaseResult, sheetsResult] = await Promise.allSettled([
+        externalSupabase.from('Dados').insert(submitData),
+        APPS_SCRIPT_URL.includes('COLE_AQUI')
+          ? Promise.reject(new Error('APPS_SCRIPT_URL não configurada'))
+          : fetch(APPS_SCRIPT_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify(submitData),
+            }),
+      ]);
+
+      const supabaseError =
+        supabaseResult.status === 'fulfilled'
+          ? (supabaseResult.value as any)?.error
+          : supabaseResult.reason;
 
       if (supabaseError) {
         console.error('Erro do Supabase:', supabaseError);
+      }
+      if (sheetsResult.status === 'rejected') {
+        console.error('Erro no Google Sheets:', sheetsResult.reason);
+      }
+
+      // Falha apenas se AMBOS falharem
+      if (supabaseError && sheetsResult.status === 'rejected') {
         throw new Error('Erro ao enviar formulário');
       }
+
 
 
 
