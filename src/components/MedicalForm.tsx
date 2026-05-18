@@ -21,6 +21,9 @@ import { useToast } from '@/hooks/use-toast';
 import { externalSupabase } from '@/lib/externalSupabase';
 
 const TOTAL_STEPS = 6;
+// URL do Apps Script Web App (substitua pela URL gerada na implantação).
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/COLE_AQUI_A_URL_DO_DEPLOY/exec';
+
 
 
 // Estados brasileiros
