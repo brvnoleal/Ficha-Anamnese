@@ -20,7 +20,7 @@ import {
 import { useToast } from '@/hooks/use-toast';
 
 const TOTAL_STEPS = 6;
-const WEBHOOK_URL = 'https://instruction-image-urge-briefs.trycloudflare.com/webhook/damskiodonto';
+const WEBHOOK_URL = 'https://indicated-wins-middle-reform.trycloudflare.com/webhook/damskiodonto';
 
 // Estados brasileiros
 const STATES = [
