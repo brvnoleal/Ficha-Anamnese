@@ -20,7 +20,7 @@ import {
 import { useToast } from '@/hooks/use-toast';
 
 const TOTAL_STEPS = 6;
-const WEBHOOK_URL = 'http://localhost:5678/webhook/damskiodonto';
+const WEBHOOK_URL = 'https://cross-population-parking-methodology.trycloudflare.com/webhook/damskiodonto';
 
 // Estados brasileiros
 const STATES = [
