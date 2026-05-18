@@ -215,15 +215,30 @@ export const MedicalForm: React.FC = () => {
         whatsapp: extractDigits(formData.whatsapp)
       };
 
-      const response = await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(submitData)
-      });
+      // Enviar para o webhook N8N e salvar no Supabase em paralelo
+      const [webhookResult, supabaseResult] = await Promise.allSettled([
+        fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(submitData),
+        }).then((r) => {
+          if (!r.ok) throw new Error(`Webhook ${r.status}`);
+          return r;
+        }),
+        externalSupabase.from('Dados').insert(submitData),
+      ]);
 
-      if (!response.ok) {
+      if (webhookResult.status === 'rejected') {
+        console.error('Erro no webhook:', webhookResult.reason);
+      }
+      if (supabaseResult.status === 'rejected') {
+        console.error('Erro no Supabase:', supabaseResult.reason);
+      } else if ((supabaseResult.value as any)?.error) {
+        console.error('Erro do Supabase:', (supabaseResult.value as any).error);
+      }
+
+      // Falha apenas se AMBOS falharem
+      if (webhookResult.status === 'rejected' && supabaseResult.status === 'rejected') {
         throw new Error('Erro ao enviar formulário');
       }
 
