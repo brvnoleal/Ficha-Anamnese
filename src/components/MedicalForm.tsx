@@ -306,13 +306,6 @@ export const MedicalForm: React.FC = () => {
 
       if (supabaseError) {
         console.error('Erro do Supabase:', supabaseError);
-      }
-      if (sheetsResult.status === 'rejected') {
-        console.error('Erro no Google Sheets:', sheetsResult.reason);
-      }
-
-      // Falha apenas se AMBOS falharem
-      if (supabaseError && sheetsResult.status === 'rejected') {
         throw new Error('Erro ao enviar formulário');
       }
 
