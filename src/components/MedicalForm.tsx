@@ -216,36 +216,87 @@ export const MedicalForm: React.FC = () => {
       // Normalizar campos de data: string vazia -> null (Postgres date)
       const dateOrNull = (v: string) => (v && v.trim() ? v : null);
 
-      const submitData = {
-        ...formData,
-        // Máscaras: enviar apenas dígitos
+      // Combina rua + número + complemento em um único campo "rua"
+      const ruaCompleta = [
+        formData.nome_rua,
+        formData.numero,
+        formData.complemento,
+      ]
+        .filter((s) => s && s.trim())
+        .join(', ');
+
+      // Mapeamento para os nomes de coluna da tabela "Dados"
+      const submitData: Record<string, any> = {
+        Nome: formData.nome_completo,
+        RG: formData.rg,
+        orgao: formData.orgao_expedidor,
         cpf: extractDigits(formData.cpf),
-        cep: extractDigits(formData.cep),
+        nascimento: dateOrNull(formData.data_nascimento),
+        sexo: formData.sexo,
+        estadoCivil: formData.estado_civil,
+        nacionalidade: formData.nacionalidade,
+        dataConsulta: dateOrNull(formData.data_consulta),
         whatsapp: extractDigits(formData.whatsapp),
-        // Datas: garantir formato YYYY-MM-DD ou null
-        data_nascimento: dateOrNull(formData.data_nascimento),
-        data_consulta: dateOrNull(formData.data_consulta),
-        data_hoje: dateOrNull(formData.data_hoje) ?? getCurrentDate(),
-        // Termos: booleanos garantidos
-        termo_responsabilidade: !!formData.termo_responsabilidade,
-        termo_consentimento: !!formData.termo_consentimento,
-        termo_imagem: !!formData.termo_imagem,
-        termo_lgpd: !!formData.termo_lgpd,
+        indicado: formData.indicado_por,
+        rua: ruaCompleta,
+        bairro: formData.bairro,
+        cidade: formData.cidade,
+        estado: formData.estado,
+        cep: extractDigits(formData.cep),
+
+        tratamento_medico: formData.tratamento_medico,
+        tratamento_detalhes: formData.tratamento_medico_detalhes,
+        alergico_medicamento: formData.alergico_medicamento,
+        alergico_medicamento_detalhes: formData.alergico_medicamento_detalhes,
+        alergia: formData.alergia,
+        alergia_detalhes: formData.alergia_detalhes,
+        gestando: formData.gestando,
+        gestando_detalhes: formData.gestando_detalhes,
+        diabetes: formData.diabetes,
+        diabetes_detalhes: formData.diabetes_detalhes,
+        hepatite: formData.hepatite,
+        hepatite_detalhes: formData.hepatite_detalhes,
+
+        sede: formData.muita_sede,
+        problema_cardiaco: formData.problemas_cardiacos,
+        cardiaco_detalhes: formData.problemas_cardiacos_detalhes,
+        dst: formData.hiv_sifilis_chagas,
+        dst_detalhes: formData.hiv_sifilis_chagas_detalhes,
+        drogas: formData.drogas,
+        drogas_detalhes: formData.drogas_detalhes,
+        fumante: formData.fumante,
+        fumante_detalhes: formData.fumante_detalhes,
+
+        pressao_arterial: formData.pressao_arterial,
+        controla_pressao: formData.controla_pressao,
+        controla_pressao_detalhes: formData.controla_pressao_detalhes,
+        historico_familia: formData.historico_familia,
+        historico_familia_detalhes: formData.historico_familia_detalhes,
+        sangramento: formData.sangramento,
+        cirurgia: formData.cirurgia,
+        cirurgia_detalhes: formData.cirurgia_detalhes,
+
+        sangra_dente: formData.sangra_dente,
+        dor_dentes: formData.dor_dentes,
+        gengiva_sangra: formData.gengiva_sangra,
+        anestesia: formData.anestesia,
+        anestesia_detalhes: formData.anestesia_mal_estar,
+        aparencia_dentes: formData.satisfacao_dentes,
+        principal_queixa: formData.principal_queixa,
+
+        declaro_verdadeiras: !!formData.termo_responsabilidade,
+        termo_ciencia: !!formData.termo_consentimento,
+        termo_tcle: !!formData.termo_lgpd,
+
+        local: formData.cidade,
+        assinaturaPaciente: formData.nome_menor || formData.nome_completo,
+        assinaturaResponsavel: formData.nome_responsavel,
+        origem: 'formulario_web',
+        data_envio: dateOrNull(formData.data_hoje) ?? getCurrentDate(),
       };
 
-      // Enviar em paralelo: Supabase + Google Sheets (Apps Script Web App)
-      // Apps Script usa text/plain pra evitar preflight CORS; modo no-cors,
-      // resposta é opaca mas a linha é gravada na planilha.
-      const [supabaseResult, sheetsResult] = await Promise.allSettled([
+      const [supabaseResult] = await Promise.allSettled([
         externalSupabase.from('Dados').insert(submitData),
-        APPS_SCRIPT_URL.includes('COLE_AQUI')
-          ? Promise.reject(new Error('APPS_SCRIPT_URL não configurada'))
-          : fetch(APPS_SCRIPT_URL, {
-              method: 'POST',
-              mode: 'no-cors',
-              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-              body: JSON.stringify(submitData),
-            }),
       ]);
 
       const supabaseError =
@@ -255,13 +306,6 @@ export const MedicalForm: React.FC = () => {
 
       if (supabaseError) {
         console.error('Erro do Supabase:', supabaseError);
-      }
-      if (sheetsResult.status === 'rejected') {
-        console.error('Erro no Google Sheets:', sheetsResult.reason);
-      }
-
-      // Falha apenas se AMBOS falharem
-      if (supabaseError && sheetsResult.status === 'rejected') {
         throw new Error('Erro ao enviar formulário');
       }
 
